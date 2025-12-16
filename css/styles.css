@@ -1,0 +1,1941 @@
+/* USE FOR CUSTOM STYLE AND LAYOUT: */
+/* Add or adjust banners for organization */
+/* modern-normalize is taking care of the box-sizing,
+   which is still a standard way to design */
+
+/* FONT */
+@font-face {
+  font-family: 'Copperplate';
+  src: url('../fonts/copperplate-gothic-light.ttf') format('truetype');
+}
+
+/* variables to use */
+:root {
+  --text-size-xs: 0.64rem;
+  --text-size-sm: 0.8rem;
+  --text-size-md: 1rem;
+  --text-size-lg: 1.25rem;
+  --text-size-xl: 1.56rem;
+  --text-size-2xl: 1.95rem;
+  --text-size-3xl: 2.44rem;
+  --text-size-4xl: 3.05rem;
+  --text-size-5xl: 3.81rem;
+
+  /*color scheme */
+  --bkg-color: #8f8f8f;
+  --accent-color: #007bff;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    UTILITIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    TYPOGRAPHY 
+    For larger projects, consider using a type scale:
+    https://baseline.is/tools/type-scale-generator/
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+h1 {
+  font-size: var(--text-size-4xl);
+}
+
+h2 {
+  font-size: var(--text-size-3xl);
+}
+
+h3 {
+  font-size: var(--text-size-2xl);
+}
+
+h4 {
+  font-size: var(--text-size-xl);
+}
+
+h5 {
+  font-size: var(--text-size-lg);
+}
+
+h6 {
+  font-size: var(--text-size-md);
+}
+
+.lead,
+.subtitle {
+  font-size: var(--text-size-lg);
+}
+
+p {
+  font-size: var(--text-size-md);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+figcaption,
+caption {
+  font-size: var(--text-size-sm);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    STRUCTURE
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+.containter {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    NAVIGATION
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+
+/****************************/
+/* HEADER STYLE */
+
+header {
+  background-color: #003249;
+  padding: 1rem 0;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: auto;
+}
+
+.menu {
+  display: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Darker Grotesque";
+}
+
+.menu-item {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  padding-bottom: 4px;
+  font-family: "Darker Grotesque";
+}
+
+.menu-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  background: #F09E3F;
+  transition: width 0.3s ease;
+}
+
+.menu-item:hover::after {
+  width: 100%;
+}
+
+.menu-item.active::after {
+  width: 100%;
+}
+
+
+
+
+/*  */
+/* apply a natural box layout model to all elements */
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* General */
+body {
+  margin: 0;
+
+  background-color: #faf8f5;
+
+}
+
+
+/* Navigation (IMPORTED) */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+}
+
+.openbtn {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  color: rgb(182, 182, 182);
+  font-family: "PT Sans", sans-serif;
+}
+
+.openbtn:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.menu-button {
+  font-size: 40px !important;
+  position: relative;
+  top: 6px;
+  right: 4px;
+}
+
+.menu-text {
+  font-size: 12px;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* The side navigation menu )IMPORTED)*/
+.all-over-bkg {
+  display: none;
+}
+
+.is-visible {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 9999;
+  display: block;
+}
+
+#mySidenav {
+  z-index: 10000;
+}
+
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  right: 0;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+  background-color: white;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 35px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: "Darker Grotesque", Helvetica, sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+
+.sidenav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 5px;
+  left: 0;
+  background: #4464ad;
+  transition: width 0.3s ease;
+}
+
+.sidenav a:hover::after {
+  color: rgb(63, 63, 63);
+  width: 100%;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 56px;
+  margin-left: 50px;
+}
+
+.sidenav .closebtn:hover {
+  cursor: pointer;
+}
+
+main {
+  transition: margin-left 0.5s;
+  padding: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    COMPONENTS / GENERAL / PAGE
+/* * * * * * * * * * * * * * * * * * * * * * * * * * */
+footer {
+  background-color: #003249;
+}
+
+.Connect a i {
+  font-size: 60px;
+}
+
+.insta-icon i {
+  color: #F09E3F;
+
+}
+
+.insta-icon i:hover {
+  color: #ffce97;
+
+}
+
+.fb-icon {
+  color: #ED3139;
+}
+
+/* Hover effect */
+.fb-icon:hover {
+  color: #ff7a80;
+  /* darker blue */
+}
+
+/* MOBILE FIRST */
+
+/* FOOTER STYLING */
+footer.footer {
+  background-color: #003249;
+  color: white;
+  padding: 1rem 1rem 1rem 1rem;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+.footer-connect,
+.footer-links,
+.footer-branding {
+  width: 100%;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* Connect Section */
+.footer-connect h4,
+.footer-links h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-family: 'Copperplate', sans-serif;
+  font-weight: 1;
+}
+
+.footer-connect .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-connect a i,
+.footer-links a {
+  font-size: 2rem;
+}
+
+.footer-connect .social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+/* Links Section */
+.footer-links ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+  color: #F09E3F;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #717171;
+  margin: 2rem 0 1rem 0;
+}
+
+/* Copyright Section */
+.copyrightSection {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #dcdcdc;
+  line-height: 1.5;
+}
+
+/* FLEX FOR DESKTOP */
+@media (width >=768px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-connect,
+  .footer-links,
+  .footer-branding {
+    flex: 1;
+  }
+
+  .footer-branding {
+    margin-left: 2.5rem;
+  }
+
+  .footer-links ul {
+    flex-direction: column;
+  }
+
+}
+
+
+
+
+/*------------------------ */
+/*HOME PAGE */
+/*------------------------ */
+
+.f-carousel {
+  --f-arrow-pos: 10px;
+
+  --f-arrow-width: 38px;
+  --f-arrow-height: 38px;
+
+
+  --f-arrow-svg-width: 20px;
+  --f-arrow-svg-height: 20px;
+  --f-arrow-svg-stroke-width: 3.5;
+  --f-arrow-svg-stroke: #ffffff;
+  --f-arrow-color: #ffffff;
+
+
+  --f-arrow-shadow: 0 6px 12px -2px rgba(255, 255, 255, 0.25),
+    0 3px 10px -5px rgb(0 0 0 / 30%);
+
+  --f-arrow-border-radius: 50%;
+  /* --f-arrow-bg: #b1b1b1; */
+  --f-arrow-hover-bg: #003249;
+  --f-arrow-active-bg: #717171;
+
+}
+
+
+
+
+#myCarousel {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  --f-carousel-gap: 0;
+}
+
+.f-carousel__slide img {
+  margin-bottom: 0;
+}
+
+.slide-content {
+  position: relative;
+  width: auto;
+  height: 100%;
+}
+
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.4);
+  margin-bottom: 0;
+
+}
+
+.slide-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+
+.slide-text h1 {
+  font-size: 2rem;
+  font-weight: 1;
+  letter-spacing: 3px;
+  margin-bottom: 0.3rem;
+  font-family: 'Copperplate', sans-serif;
+}
+
+.slide-text h1::after {
+  content: "";
+  display: block;
+  width: 15%;
+  height: 4px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.slide-text p {
+  font-size: 1rem;
+  margin-top: 0;
+  padding-top: 0;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+@media (width >=768px) {
+  .slide-text h1 {
+    font-size: 3.5rem;
+  }
+
+  .slide-text p {
+    font-size: 1.8rem;
+  }
+
+}
+
+/*MISSION BLOCK */
+.mission {
+  text-align: center;
+  margin: 0 auto;
+  margin: 4rem;
+  font-weight: 1;
+}
+
+.mission h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Copperplate', sans-serif;
+  font-weight: 1;
+
+}
+
+.mission h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  /* width of the line (adjust as needed) */
+  height: 2px;
+  /* thickness of the line */
+  background-color: #F09E3F;
+  /* color of the line */
+  margin: 0.5rem auto 0 auto;
+  /* spacing above the line and centering */
+}
+
+.mission p {
+  font-size: 1.5rem;
+  max-width: 900px;
+  font-weight: 350;
+  margin: 0 auto;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+/* END MISSION */
+/*WHAT WE SO BLOCK */
+.what-we-do {
+  display: flex;
+  flex-direction: column;
+  /* stack on mobile */
+  align-items: center;
+  text-align: center;
+
+  padding: 2rem 1rem;
+  gap: 2rem;
+  background-color: #003249;
+}
+
+.what-we-do-photo {
+  width: 100%;
+  max-width: 500px;
+}
+
+.what-we-do-text {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 2rem;
+}
+
+.what-we-do-text dt {
+  font-family: 'Copperplate', sans-serif;
+  font-size: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 0.5em;
+
+  display: block;
+  width: 100%;
+  margin: 2rem 0;
+
+  padding: 1rem 1.5rem;
+  border-bottom: 4px solid #FD3A76;
+  border-radius: 8px;
+
+  font-family: 'Copperplate', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 1;
+  color: rgb(255, 255, 255);
+  text-align: left;
+
+
+}
+
+.what-we-do-text dd {
+  margin: 0 0 1rem 0;
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+  line-height: 1.4;
+
+
+}
+
+
+.what-we-do-text h3 {
+  font-size: 2.5rem;
+  font-weight: 1;
+
+  color: white;
+  margin-bottom: 0.5rem;
+  font-family: 'Copperplate', sans-serif;
+  font-size: 3rem;
+}
+
+.what-we-do-text h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+@media (width >=768px) {
+
+  .mission h3 {
+    font-size: 3rem;
+  }
+
+  .mission p {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .what-we-do {
+    flex-direction: row;
+    /* image left, text right */
+    align-items: start;
+    /* vertically center */
+    text-align: center;
+    /* align text left */
+    gap: 4rem;
+    text-align: left;
+  }
+
+  .what-we-do-text {
+    font-size: 1.8rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .what-we-do-photo {
+    max-width: 47%;
+  }
+}
+
+@media (width >=992px) {
+
+  .what-we-do-photo {
+    margin-left: 5rem;
+    max-width: 40%;
+  }
+
+  .what-we-do-text h3 {
+    font-size: 3rem;
+
+  }
+
+  .what-we-do-text dt {
+    font-size: 2rem;
+  }
+
+}
+
+
+
+/*END WHAT WE DO BLOCK */
+
+
+/*JOIN US BLOCK */
+.join-section {
+  text-align: center;
+  margin: 5rem auto;
+}
+
+.join-section h3 {
+  font-family: 'Copperplate', sans-serif;
+  font-size: 3rem;
+  font-weight: 1;
+}
+
+.join-section h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.join-section p {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  padding: 0 2rem;
+}
+
+.join-section h6 {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #003249;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.joinbutton {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #003249;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+.joinbutton:hover {
+  background-color: #c87a2c;
+}
+
+/******************* */
+/* BANNER */
+.homebanner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.4);
+}
+
+.homebanner .banner-content {
+  position: relative;
+  width: 100%;
+}
+
+.homebanner h2 {
+  position: absolute;
+  top: 50%;
+  /* vertical center */
+  left: 50%;
+  /* horizontal center */
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 1;
+  font-family: 'Copperplate', sans-serif;
+  text-align: center;
+  margin: 0;
+}
+
+@media (width >=768px) {
+  .homebanner h2 {
+    font-size: 4rem;
+  }
+}
+
+/*------------------------ */
+/*-----------END HOMEPAGE------------- */
+/*------------------------ */
+
+
+
+
+
+
+
+/**********************************************/
+/*              ABOUT PAGE STYLES             */
+/**********************************************/
+.aboutusinfo,
+.folklorico-info {
+  padding: 3rem;
+  gap: 3rem;
+}
+
+
+/* ------------------------------
+   ABOUT US SECTION
+------------------------------ */
+
+
+.about-text-block {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+
+.aboutusinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+}
+
+.aboutusinfo img {
+  width: 100%;
+  height: auto;
+}
+
+.aboutusinfo h2 {
+  font-family: 'Copperplate', sans-serif;
+  margin: 0 auto;
+  font-weight: 1;
+  text-align: center;
+  font-size: 2rem;
+
+}
+
+.aboutusinfo h2::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.aboutusinfo p {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+}
+
+@media (width>=768px) {
+  .aboutusinfo {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .aboutusinfo img {
+    padding-top: 2.5rem;
+    max-width: 45%;
+  
+  }
+
+  .aboutusinfo .about-us-text {
+    max-width: 55%;
+  }
+}
+
+
+/* ------------------------------
+   WHAT IS FOLKLORICO SECTION
+------------------------------ */
+
+.folklorico-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #f1ece3;
+}
+
+.folklorico-info h3 {
+  font-family: 'Copperplate', sans-serif;
+  text-align: center;
+  font-weight: 1;
+  padding-top: 1.5rem;
+
+}
+
+.folklorico-info h3::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.folklorico-info p {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+}
+
+.folklorico-info dl {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  margin: 0 3rem;
+  margin-bottom: 2rem;
+}
+
+.folklorico-info dt {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 5000;
+
+}
+
+.folklorico-info img {
+  padding-top: 2.5rem;
+  width: 100%;
+  /* border-radius: 8px; */
+}
+
+
+@media (width >=768px) {
+  .folklorico-info {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .folklorico-info img {
+    max-width: 50%;
+    padding-top: 4rem;
+  }
+
+  .folklorico-info .info-text {
+    max-width: 55%;
+  }
+}
+
+
+/* ------------------------------
+   3-PHOTO GALLERY
+------------------------------ */
+.photoGallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #003249;
+}
+
+.photoGallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Wide view: 3 in a row */
+@media (width>= 768px) {
+  .photoGallery {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .photoGallery img {
+    width: 33%;
+  }
+}
+
+
+/* ------------------------------
+   HISTORY + VISION TEXT CONTAINER
+------------------------------ */
+
+.History-Value-Container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.History-Value-Container h3 {
+  font-family: 'Copperplate', sans-serif;
+  text-align: center;
+  font-weight: 1;
+}
+
+.History-Value-Container h3::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.history p {
+  margin: 0 3rem;
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 1.5rem;
+}
+
+
+@media (width>=768px) {
+
+
+  .History-Value-Container {
+    margin-top: 5rem;
+
+  }
+
+  .History-Value-Container h3 {
+    font-family: 'Copperplate', sans-serif;
+    text-align: center;
+    font-weight: 1;
+
+
+  }
+
+
+  .history p {
+    font-family: "Darker Grotesque", sans-serif;
+    margin:2rem 15rem 10rem;
+  }
+
+}
+
+
+/**********************************************/
+/*              ABOUT PAGE END                */
+/**********************************************/
+
+
+
+/**********************************************/
+/* EVENTS */
+********
+/**********************************************/
+/* ------------------------------
+   *****GENERAL PAGE STYLING*****
+------------------------------ */
+body {
+  font-family: "Darker Grotesque", sans-serif;
+  color: #003249;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h6 {
+  font-family: 'Copperplate', sans-serif;
+  margin: 0;
+  font-weight: 1;
+}
+
+p{
+  font-family: "Darker Grotesque", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------------
+   ***EVENTS HEADER********
+------------------------------ */
+.events-header {
+  text-align: center;
+  padding: 1rem 3rem;
+  margin: 1rem 0;
+}
+
+.events-header h1 {
+  font-size: 3rem;
+  font-weight: 1;
+  border-bottom: #F09E3F 4px dotted;
+}
+
+
+.events-banner-block {
+  background-color: #003249;
+  padding: 0 0 2rem 0;
+  box-shadow: 0px 3px 10px black;
+}
+
+.events-banner-block-text p {
+  font-size: rem;
+  color: white;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+
+.events-banner {
+  width: 100%;
+  padding-top: 1rem;
+  filter: brightness(.6);
+  padding-bottom: 4rem;
+}
+
+/* ------------------------------
+   UPCOMING EVENTS
+------------------------------ */
+.events-info {
+  padding: 2rem 3rem;
+  margin: 2rem 0;
+}
+
+.events-info h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.events-info ul li h6 {
+  font-size: 1.8rem;
+  font-weight: 1;
+  margin-bottom: 0.5rem;
+}
+
+.events-info ul li p {
+  font-size: 1.6rem;
+  margin: 0.2rem 0;
+}
+
+.events-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.events-info li {
+  background: #fdf3f3;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #A83C43;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+  // PAST EVENTS //
+------------------------------ */
+.past-events {
+  padding: 2rem 3rem;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #003249;
+}
+
+.past-events-banner {
+  width: 100%;
+}
+
+.past-events-text-block {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.past-events-text-block h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 1;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.past-events-text-block h2::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.past-events-text-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.past-events-text-block li {
+  background: #fdf3f3;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #A83C43;
+  border-radius: 6px;
+}
+
+.past-events-text-block li h6 {
+  font-size: 1.8rem;
+  font-weight: 1;
+  margin-bottom: 0.5rem;
+}
+
+.past-events-text-block li p {
+  font-size: 1.6rem;
+  margin: 0.2rem 0;
+}
+
+/* ------------------------------
+   BOOKING SECTION
+------------------------------ */
+.booking-info {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+/* Wrapper for banner*/
+.booking-banner-block {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Booking banner img */
+.booking-banner {
+  width: 100%;
+  filter: brightness(0.7);
+  display: block;
+}
+
+/* h2 on top of image */
+.booking-banner-block h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* center*/
+  color: white;
+  font-size: 2rem;
+  font-weight: 1;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Arrow below the banner */
+.booking-banner-block .bookingGraphic {
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: auto;
+  color: rgb(233, 233, 233);
+}
+
+/* ------------------------------
+   CONTACT SECTION
+------------------------------ */
+.ContactSection {
+  padding: 2rem 3rem;
+  text-align: center;
+}
+
+.ContactSection h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ContactSection h3::after {
+  content: "";
+  display: block;
+  width: 20%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.ContactSection p {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.ContactSection .join-btn {
+  display: inline-block;
+  background-color: #F09E3F;
+  color: white;
+  font-size: 1.6rem;
+  padding: 0.8rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+
+}
+
+.ContactSection .join-btn:hover {
+  background-color: #A83C43;
+}
+
+/* ------------------------------
+   RESPONSIVE STYLING
+------------------------------ */
+@media (width>= 768px) {
+
+  .events-header,
+  .events-info,
+  .past-events,
+  .ContactSection {
+    padding: 2rem 5rem;
+  }
+
+
+
+
+  .past-events {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+
+  .past-events-banner {
+    max-width: 45%;
+  }
+
+  .past-events-text-block {
+    max-width: 50%;
+    margin: 0;
+  }
+
+  .events-header img {
+    padding: 0;
+  }
+
+
+  .booking-banner-block .bookingGraphic {
+    width: 200px;
+  }
+
+  .booking-banner-block h2 {
+    font-size: 3.8rem;
+  }
+
+  .ContactSection h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .ContactSection p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/*********************************************** */
+/*                EVENTS PAGE END             */
+/*********************************************** */
+
+
+/**********************************************/
+/*              JOIN PAGE STYLES              */
+/**********************************************/
+
+/* MOBILE-FIRST DEFAULTS */
+.join-main {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.join-main h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.join-main h1::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0;
+}
+
+.join-main p {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.what-to-expect-text {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+.what-to-expect {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #003249;
+}
+
+.what-to-expect img {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+}
+
+.what-to-expect-text h3 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 1;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.what-to-expect-text h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0;
+}
+
+.what-to-expect-text ul {
+  color: white;
+  padding-left: 2rem;
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+
+.what-to-expect-text li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.what-to-expect-text li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.8;
+}
+
+.Monthly-Payment {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Monthly-Payment-text {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.Monthly-Payment-text h3 {
+  text-align: center;
+}
+
+.Monthly-Payment-text h3::after {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0;
+}
+
+.Monthly-Payment-text p {
+  font-size: 2rem;
+  margin: 3rem;
+}
+
+.double-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ContactInfo {
+  padding: 3rem;
+  text-align: center;
+  background-color: #F1ECE3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ContactInfo-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ContactInfo-text h3 {
+  font-size: 2rem;
+}
+
+.ContactInfo-text h3::after {
+  font-size: 2rem;
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.ContactInfo-text p {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.join-btn {
+  font-family: "Darker Grotesque", sans-serif;
+  padding: 1rem 2rem;
+  background-color: #F09E3F;
+  color: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  font-size: 1.6rem;
+
+}
+
+.ContactInfo img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ======================
+   MEDIA QUERIES 
+   ====================== */
+
+/* Tablets and up */
+@media (width>=768px) {
+
+  .join-main {
+    max-width: 900px;
+  }
+
+  .join-main p,
+  .Monthly-Payment-text p,
+  .what-to-expect-text ul,
+  .ContactInfo-text p {
+    font-size: 2rem;
+  }
+
+  .Monthly-Payment-text p {
+    margin: 2rem;
+
+  }
+
+
+  .what-to-expect {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .what-to-expect-text {
+    max-width: 50%;
+    margin:4rem auto;
+  }
+
+  .what-to-expect img {
+    max-width: 50%;
+    align-self: center;
+  }
+}
+
+@media (width>=992px) {
+
+  .Monthly-Payment {
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  .Monthly-Payment-text{
+    margin-top: 5rem;
+  }
+
+  .double-photo {
+    max-width: 50%;
+  }
+
+  .ContactInfo {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .ContactInfo img {
+    max-width: 40%;
+    margin: 0;
+    order: -1;
+  }
+
+  .what-to-expect-text {
+    max-width: 40%;
+  }
+
+  .ContactInfo-text {
+    max-width: 45%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .join-btn {
+    margin-top: 1.5rem;
+    align-self: center;
+    border-radius: 20px;
+  }
+}
+
+
+
+/************************************/
+/**************** GALLERY **********/
+/***********************************/
+.GalleryMain {
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.GalleryMain h1 {
+  font-weight: 1;
+
+}
+
+.GalleryMain h1::after {
+  font-size: 2rem;
+  content: "";
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: #F09E3F;
+  margin: 0.5rem auto 0 auto;
+}
+
+.GalleryMain p {
+  font-size: 2rem;
+}
+
+.Gallery1 {
+  background-color: #003249;
+  padding: 2rem;
+}
+
+.Gallery2 {
+  background-color: #F2EFEA;
+  padding: 2rem;
+}
+
+
+/* =========================
+   GALLERY SLIDESHOW
+   ========================= */
+
+.slideshow-section {
+  width: 100%;
+  margin: 4rem auto;
+  overflow: hidden;
+}
+
+/* Carousel container */
+#gallery-carousel {
+  width: 100%;
+}
+
+#gallery-carousel .f-carousel__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gallery-carousel img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  padding: 1rem;
+  border: #003249 3px dotted;
+  margin: .5rem;
+}
+
+@media (width >=768px) {
+  #gallery-carousel img {
+    height: 600px;
+    width: 50%;
+    object-fit: cover;
+    border: #003249 6px dotted;
+    margin: 0;
+  }
+}
+
+
+
+/* ===== GALLERY UTILITIES ===== */
+img {
+  display: block;
+  max-inline-size: 100%;
+}
+
+/* ===== HOVER EFFECT ===== */
+.hvr-grow-rotate {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.hvr-grow-rotate:hover,
+.hvr-grow-rotate:focus {
+  transform: scale(1.1) rotate(4deg);
+}
+
+/* ===== GALLERY LAYOUT ===== */
+.gallery-section {
+  margin-inline: auto;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.gallery-section figure {
+  padding: 1rem 1rem 2rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  width: 300px;
+  flex: 1 1 300px;
+  max-width: 450px;
+}
+
+.gallery-section figcaption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+
+.gallery-section img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+
+/* ===== GALLERY BANNER ===== */
+.GalleryBanner {
+  position: relative;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.GalleryBanner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.GalleryBanner h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: white;
+  font-size: 3rem;
+  font-family: 'Copperplate', sans-serif;
+  font-weight: 1;
+  text-align: center;
+}
+
+
+@media (width >=768px) {
+  .GalleryBanner img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+
+  .GalleryBanner h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 5rem;
+  }
+
+
+}
+
+
+
+
+/* 
+    IMAGES
+*/
+
+/* 
+    LINKS
+*/
+
+/* 
+    BUTTONS
+*/
+
+/* 
+    TABLES
+*/
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    PAGE SPECIFIC
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * *
+    MEDIA QUERIES 
+* * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* X-Small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (width >=576px) {}
+
+/* Medium devices (tablets, 768px and up) */
+@media (width >=768px) {
+  header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+
+  .branding {
+    margin-right: 10rem;
+    justify-content: flex-start;
+  }
+
+  .openbtn,
+  #mySidenav,
+  .all-over-bkg {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin: 0;
+    padding-right: 3rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (width >=992px) {
+  .branding {
+    width: 400px;
+    height: auto;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (width >=1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (width >=1400px) {}
