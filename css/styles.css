@@ -123,8 +123,9 @@ header {
 .branding {
   display: flex;
   align-items: center;
-  width: 300px;
+  width: 250px;
   height: auto;
+  margin-right: 1rem;
 }
 
 .menu {
@@ -153,6 +154,7 @@ header {
   background: #F09E3F;
   transition: width 0.3s ease;
 }
+
 
 .menu-item:hover::after {
   width: 100%;
@@ -197,7 +199,7 @@ body {
 .openbtn {
   position: absolute;
   right: 20px;
-  top: 40px;
+  top: 30px;
   color: rgb(182, 182, 182);
   font-family: "PT Sans", sans-serif;
 }
@@ -545,7 +547,7 @@ footer.footer {
 }
 
 .slide-text h1 {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 1;
   letter-spacing: 3px;
   margin-bottom: 0.3rem;
@@ -562,13 +564,26 @@ footer.footer {
 }
 
 .slide-text p {
-  font-size: 1rem;
+  font-size: .8rem;
   margin-top: 0;
   padding-top: 0;
   font-family: "Darker Grotesque", sans-serif;
 }
 
+
 @media (width >=768px) {
+  .slide-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .slide-text p {
+    font-size: 1.8rem;
+  }
+
+}
+
+
+@media (width >=1200px) {
   .slide-text h1 {
     font-size: 3.5rem;
   }
@@ -677,11 +692,10 @@ footer.footer {
 
 
 .what-we-do-text h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 1;
   color: white;
   font-family: 'Copperplate', sans-serif;
-  font-size: 3rem;
 }
 
 .what-we-do-text h3::after {
@@ -742,6 +756,7 @@ footer.footer {
     font-size: 2rem;
   }
 
+
 }
 
 
@@ -757,7 +772,7 @@ footer.footer {
 
 .join-section h3 {
   font-family: 'Copperplate', sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 1;
 }
 
@@ -824,7 +839,7 @@ footer.footer {
   /* horizontal center */
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 1;
   font-family: 'Copperplate', sans-serif;
   text-align: center;
@@ -834,6 +849,10 @@ footer.footer {
 @media (width >=768px) {
   .homebanner h2 {
     font-size: 4rem;
+  }
+
+    .join-section h3 {
+    font-size: 3rem; 
   }
 }
 
@@ -862,10 +881,6 @@ footer.footer {
 ------------------------------ */
 
 
-.about-text-block {
-  margin-left: 3rem;
-  margin-right: 3rem;
-}
 
 
 .aboutusinfo {
@@ -892,7 +907,7 @@ footer.footer {
 .aboutusinfo h2::after {
   content: "";
   display: block;
-  width: 20%;
+  width: 400px;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -938,13 +953,12 @@ footer.footer {
   text-align: center;
   font-weight: 1;
   padding-top: 1.5rem;
-
 }
 
 .folklorico-info h3::after {
   content: "";
   display: block;
-  width: 20%;
+  width: 400px;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -958,15 +972,32 @@ footer.footer {
 .folklorico-info dl {
   font-family: "Darker Grotesque", sans-serif;
   font-size: 1.5rem;
-  margin: 0 3rem;
-  margin-bottom: 2rem;
+  margin:2rem auto;
 }
+
+
 
 .folklorico-info dt {
   font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 5000;
+  font-size: 1.6rem;
+  font-weight: 1;
 
+
+  font-weight: 440;
+  color: #005a84;
+  letter-spacing: 0.03em;
+}
+
+.folklorico-info dt::before {
+  content: "• ";
+  color: #003249;
+}
+
+.folklorico-info dd {
+  margin-left: 1rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
+  color: #000000;
 }
 
 .folklorico-info img {
@@ -979,13 +1010,13 @@ footer.footer {
 @media (width >=768px) {
   .folklorico-info {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 3rem;
   }
 
   .folklorico-info img {
     max-width: 50%;
-    padding-top: 4rem;
+    padding-top: 0;
   }
 
   .folklorico-info .info-text {
@@ -1008,7 +1039,6 @@ footer.footer {
 .photoGallery img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
 }
 
 /* Wide view: 3 in a row */
@@ -1045,7 +1075,7 @@ footer.footer {
 .History-Value-Container h3::after {
   content: "";
   display: block;
-  width: 20%;
+  width: 400px;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -1055,6 +1085,8 @@ footer.footer {
   margin: 0 3rem;
   font-family: "Darker Grotesque", sans-serif;
   font-size: 1.5rem;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
 }
 
 
@@ -1333,7 +1365,7 @@ a {
 }
 
 .ContactSection p {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
@@ -1403,7 +1435,7 @@ a {
   }
 
   .ContactSection p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 }
@@ -1571,7 +1603,7 @@ a {
 }
 
 .ContactInfo-text p {
-  font-size: 2rem;
+  font-size: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -1709,7 +1741,7 @@ a {
 }
 
 .GalleryMain p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .Gallery1 {
@@ -1834,7 +1866,7 @@ img {
 .GalleryBanner::before {
   content: "";
   position: absolute;
-  top: -4rem;              /* matches the margin gap */
+  top: -2rem;              /* matches the margin gap */
   left: 0;
   width: 100%;
   height: 4rem;            /* height of the gap */
@@ -1855,7 +1887,7 @@ img {
   transform: translate(-50%, -50%);
 
   color: white;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Copperplate', sans-serif;
   font-weight: 1;
   text-align: center;
@@ -1863,6 +1895,27 @@ img {
 
 
 @media (width >=768px) {
+  .GalleryBanner img {
+    width: 100%;
+    height: 900px;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
+
+  .GalleryBanner h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    font-size: 4rem;
+  }
+
+
+}
+
+@media (width >=992px) {
   .GalleryBanner img {
     width: 100%;
     height: 900px;
@@ -1945,7 +1998,7 @@ img {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (width >=992px) {
+@media (width >=1200px) {
   .branding {
     width: 400px;
     height: auto;

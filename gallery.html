@@ -142,12 +142,12 @@
         <img src="images/gallery/SlideShow/fn(pr2).jpg" alt="Slide 8">
       </div>
 
-       <div class="f-carousel__slide">
+      <div class="f-carousel__slide">
         <img src="images/gallery/SlideShow/fnpara (1).jpg" alt="Slide 9">
       </div>
-      
 
-       <div class="f-carousel__slide">
+
+      <div class="f-carousel__slide">
         <img src="images/gallery/SlideShow/fnpara2 (1).jpg" alt="Slide 10">
       </div>
 
@@ -155,18 +155,18 @@
         <img src="images/gallery/SlideShow/oldfn227 (1).jpg" alt="Slide 11">
       </div>
 
-        <div class="f-carousel__slide">
+      <div class="f-carousel__slide">
         <img src="images/gallery/SlideShow/post-fuegonuevousa-jul-07-2024.jpeg" alt="Slide 12">
       </div>
 
 
-       <div class="f-carousel__slide">
+      <div class="f-carousel__slide">
         <img src="images/gallery/SlideShow/post-fuegonuevousa-may-07-2024-1.jpg" alt="Slide 13">
       </div>
-      
 
-      
-      
+
+
+
 
     </div>
   </section>
@@ -212,7 +212,7 @@
 
 
 
- 
+
 
   <article class="GalleryBanner">
     <img src="images/gallery/paradefn (1).jpg" alt="Gallery Banner" class="gallery-banner" />
@@ -222,7 +222,9 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-branding">
-        <img src="images/fnbranding (3).png" class="footerBranding" alt="footerBranding" />
+        <a href="index.html">
+          <img src="images/fnbranding (3).png" class="footerBranding" alt="footerBranding" />
+        </a>
       </div>
       <div class="footer-connect">
         <h4>Connect</h4>
@@ -259,24 +261,24 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.autoscroll.umd.js"></script>
 
   <script>
-  const galleryCarousel = document.getElementById("gallery-carousel");
+    const galleryCarousel = document.getElementById("gallery-carousel");
 
-  Carousel(
-    galleryCarousel,
-    {
-      infinite: true,
-      transition: "linear",
+    Carousel(
+      galleryCarousel,
+      {
+        infinite: true,
+        transition: "linear",
 
-      Autoscroll: {
-        speed: 10,        // controls scroll speed
-        speedOnHover: 10,   // pause on hover
+        Autoscroll: {
+          speed: 10,        // controls scroll speed
+          speedOnHover: 10,   // pause on hover
+        },
       },
-    },
-    {
-      Autoscroll,
-    }
-  ).init();
-</script>
+      {
+        Autoscroll,
+      }
+    ).init();
+  </script>
 
 </body>
 
