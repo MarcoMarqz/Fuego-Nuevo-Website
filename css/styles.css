@@ -322,7 +322,7 @@ main {
   padding: 0;
 }
 
-/* * * * * * * * * * * * * * * * * * * * * * * * *
+/* * * * * * * * * * * * * * * * * * * * * * * * 
     COMPONENTS / GENERAL / PAGE
 /* * * * * * * * * * * * * * * * * * * * * * * * * * */
 footer {
@@ -549,7 +549,7 @@ footer.footer {
 .slide-text h1 {
   font-size: 1.2rem;
   font-weight: 1;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   margin-bottom: 0.3rem;
   font-family: 'Copperplate', sans-serif;
 }
@@ -907,7 +907,7 @@ footer.footer {
 .aboutusinfo h2::after {
   content: "";
   display: block;
-  width: 400px;
+  width: 100%;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -958,7 +958,7 @@ footer.footer {
 .folklorico-info h3::after {
   content: "";
   display: block;
-  width: 400px;
+  width: 100%;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -984,20 +984,17 @@ footer.footer {
 
 
   font-weight: 440;
-  color: #005a84;
+  color: #000000;
   letter-spacing: 0.03em;
 }
 
-.folklorico-info dt::before {
-  content: "• ";
-  color: #003249;
-}
+
 
 .folklorico-info dd {
   margin-left: 1rem;
   margin-top: 0.25rem;
   line-height: 1.5;
-  color: #000000;
+  color: #003249;
 }
 
 .folklorico-info img {
@@ -1075,7 +1072,7 @@ footer.footer {
 .History-Value-Container h3::after {
   content: "";
   display: block;
-  width: 400px;
+  width: 100%;
   height: 2px;
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
@@ -1112,6 +1109,10 @@ footer.footer {
     margin:2rem 15rem 10rem;
   }
 
+  .History-Value-Container h3::after {
+    width: 70%;
+  }
+
 }
 
 
@@ -1123,7 +1124,6 @@ footer.footer {
 
 /**********************************************/
 /* EVENTS */
-********
 /**********************************************/
 /* ------------------------------
    *****GENERAL PAGE STYLING*****
@@ -1172,11 +1172,10 @@ a {
 .events-banner-block {
   background-color: #003249;
   padding: 0 0 2rem 0;
-  box-shadow: 0px 3px 10px black;
 }
 
 .events-banner-block-text p {
-  font-size: rem;
+  font-size: 1rem;
   color: white;
   text-align: center;
   padding-bottom: 2rem;
@@ -1324,7 +1323,7 @@ a {
   transform: translate(-50%, -50%);
   /* center*/
   color: white;
-  font-size: 2rem;
+  font-size: .8rem;
   font-weight: 1;
   margin: 0;
   text-align: center;
@@ -1334,10 +1333,10 @@ a {
 /* Arrow below the banner */
 .booking-banner-block .bookingGraphic {
   position: absolute;
-  top: 60%;
+  top: 57%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 40px;
   height: auto;
   color: rgb(233, 233, 233);
 }
@@ -1422,11 +1421,11 @@ a {
 
 
   .booking-banner-block .bookingGraphic {
-    width: 100px;
+    width: 70px;
   }
 
   .booking-banner-block h2 {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
   }
 
   .ContactSection h3 {
@@ -1439,6 +1438,19 @@ a {
     margin-bottom: 2rem;
   }
 }
+
+@media (width>= 1200px) {
+
+    .booking-banner-block h2 {
+    font-size: 2.8rem;
+  }
+
+   .booking-banner-block .bookingGraphic {
+    width: 100px;
+  }
+
+}
+
 
 /*********************************************** */
 /*                EVENTS PAGE END             */
@@ -1459,7 +1471,7 @@ a {
 
 .join-main h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .join-main h1::after {
@@ -1791,7 +1803,7 @@ a {
     height: 600px;
     width: 50%;
     object-fit: cover;
-    border: #003249 6px dotted;
+    border: #003249 4px dotted ;
     margin: 0;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.4));
   }
