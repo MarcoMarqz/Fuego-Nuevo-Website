@@ -170,7 +170,7 @@ header::after {
 .branding {
   display: flex;
   align-items: center;
-  width: 310px;
+  width:250px;
   height: auto;
   margin-right: 1rem;
 }
@@ -226,9 +226,6 @@ body {
 
 
 @media (width >=768px) {
-    header {
-          /* position: static; */
-    }
 
   html,
   body {
@@ -246,7 +243,6 @@ body {
 /* General */
 body {
   margin: 0;
-
   background-color: #faf8f5;
 
 }
@@ -561,6 +557,12 @@ footer.footer {
 
 
 
+
+#myCarousel .f-carousel__slide {
+  overflow: hidden;  
+  background: #003249;
+
+}
 #myCarousel {
   width: 100%;
   max-width: 100%;
@@ -574,7 +576,7 @@ footer.footer {
 
 .slide-content {
   position: relative;
-  width: auto;
+  width: 100%;
   height: 75vh;
   overflow: hidden;
 }
@@ -789,6 +791,7 @@ footer.footer {
   .mission p {
     margin-top: 2rem;
     font-size: 1.4rem;
+    margin-bottom: 5rem;
   }
 
   .what-we-do {
@@ -948,43 +951,96 @@ footer.footer {
 /**********************************************/
 /*              ABOUT PAGE STYLES             */
 /**********************************************/
-.aboutusinfo,
-.folklorico-info {
-  padding: 3rem;
-  gap: 3rem;
-}
 
 
 /* ------------------------------
    ABOUT US SECTION
 ------------------------------ */
 
-
-
-
 .aboutusinfo {
+  background-color: white;      /* or remove if you want default */
+}
+
+.folklorico-info {
+  background-color: #f1ece3;    /* your original */
+}
+
+
+/* Full-width sections keep their backgrounds */
+.aboutusinfo,
+.folklorico-info {
+  padding: 1rem 0;   /* padding vertical only so backgrounds stay full width */
+}
+
+/* Inner alignment wrapper (same width for both sections) */
+.aboutusinfo .section-inner,
+.folklorico-info .section-inner {
+  max-width: 1400px;     /* wider content area */
+  margin: 0 auto;
+  padding: 0 2rem;       /* less side whitespace */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding-left: 4rem;
-    padding-right: 4rem;
-
-
+  gap: 1rem;
 }
 
-.aboutusinfo img {
-  width: 100%;
-  height: auto;
-}
 
-.aboutusinfo h2 {
-  font-family: 'Copperplate', sans-serif;
-  margin: 0 auto;
-  font-weight: 1;
-  text-align: center;
+
+.aboutusinfo h2,
+.folklorico-info h3 {
   font-size: 2rem;
-
 }
+
+.aboutusinfo p,
+.folklorico-info p,
+.folklorico-info dl,
+.folklorico-info dd,
+.folklorico-info dt {
+  font-size: 1.5rem;
+}
+
+/* Tablet+ layout */
+@media (width>=768px) {
+  .aboutusinfo .section-inner,
+  .folklorico-info .section-inner {
+    flex-direction: row;
+    align-items: center;   /* vertical balance */
+    gap: 2rem;
+  }
+
+  .aboutusinfo .section-inner img,
+  .folklorico-info .section-inner img {
+    width: 50%;
+    max-width: 55%;
+    height: 530px;         /* controls visual weight */
+    object-fit: cover;    /* allows crop instead of stretch */
+    padding-top: 0;
+  }
+
+    .aboutusinfo .section-inner img{
+      padding-left: 2rem;
+    }
+
+
+      .folklorico-info .section-inner img {
+      padding-right: 2rem;
+    }
+
+
+  .folklorico-info .section-inner img {
+    order: -1;             /* image on left */
+  }
+
+  .aboutusinfo .section-inner .about-us-text,
+  .folklorico-info .section-inner .info-text {
+    width: 50%;
+
+    max-width: 50%;
+    padding: 3rem;
+  }
+}
+
+
+
 
 .aboutusinfo h2::after {
   content: "";
@@ -995,50 +1051,6 @@ footer.footer {
   margin: 0.5rem auto 0 auto;
 }
 
-.aboutusinfo p {
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.5rem;
-}
-
-@media (width>=768px) {
-  .aboutusinfo {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 3rem;
-  }
-
-  .aboutusinfo img {
-    padding-top: 2.5rem;
-    max-width: 45%;
-  
-  }
-
-  .aboutusinfo .about-us-text {
-    max-width: 55%;
-  }
-}
-
-
-/* ------------------------------
-   WHAT IS FOLKLORICO SECTION
------------------------------- */
-
-.folklorico-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background-color: #f1ece3;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-.folklorico-info h3 {
-  font-family: 'Copperplate', sans-serif;
-  text-align: center;
-  font-weight: 1;
-  padding-top: 1.5rem;
-}
-
 .folklorico-info h3::after {
   content: "";
   display: block;
@@ -1047,65 +1059,6 @@ footer.footer {
   background-color: #F09E3F;
   margin: 0.5rem auto 0 auto;
 }
-
-.folklorico-info p {
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.5rem;
-}
-
-.folklorico-info dl {
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.5rem;
-  margin:2rem auto;
-}
-
-
-
-.folklorico-info dt {
-  font-family: "Darker Grotesque", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 1;
-
-
-  font-weight: 440;
-  color: #000000;
-  letter-spacing: 0.03em;
-}
-
-
-
-.folklorico-info dd {
-  margin-left: 1rem;
-  margin-top: 0.25rem;
-  line-height: 1.5;
-  color: #003249;
-}
-
-.folklorico-info img {
-  padding-top: 2.5rem;
-  width: 100%;
-  /* border-radius: 8px; */
-}
-
-
-@media (width >=768px) {
-  .folklorico-info {
-    flex-direction: row;
-    align-items: center;
-    gap: 3rem;
-    padding:3rem;
-  }
-
-  .folklorico-info img {
-    max-width: 50%;
-    padding-top: 0;
-  }
-
-  .folklorico-info .info-text {
-    max-width: 55%;
-  }
-}
-
 
 /* ------------------------------
    3-PHOTO GALLERY
@@ -1649,7 +1602,7 @@ a {
 }
 
 .Monthly-Payment {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 2.5rem auto;
   padding: 0 1rem;
   display: flex;
@@ -1687,6 +1640,11 @@ a {
   margin-top: 1rem;
   padding-left:2rem ;
   padding-right: 2rem;
+}
+
+.double-photo img {
+  width: 100%;
+  height: auto;
 }
 
 .ContactInfo {
@@ -1732,6 +1690,10 @@ a {
   border-radius: 3px;
   font-size: 1.2rem;
 
+}
+
+.join-btn:hover {
+  background-color: #A83C43;
 }
 
 .ContactInfo img {
@@ -1794,7 +1756,7 @@ a {
   }
 
   .double-photo {
-    max-width: 50%;
+    max-width: 60%;
     padding-left:3rem ;
     padding-right: 4rem;
   }
@@ -1806,9 +1768,10 @@ a {
   }
 
   .ContactInfo img {
-    max-width: 40%;
+    max-width: 48%;
     margin: 0;
     order: -1;
+    padding-left: 1rem;
   }
 
   .what-to-expect-text {
@@ -1816,7 +1779,7 @@ a {
   }
 
   .ContactInfo-text {
-    max-width: 45%;
+    max-width: 50%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1827,6 +1790,11 @@ a {
     margin-top: 1.5rem;
     align-self: center;
     border-radius: 3px;
+  }
+
+    .ContactInfo-text p {
+    width: 100%;
+    padding-left: 4rem;
   }
 }
 
@@ -1864,12 +1832,12 @@ a {
 
 .Gallery1 {
   background-color: #003249;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .Gallery2 {
   background-color: #F2EFEA;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 
@@ -1893,28 +1861,24 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
 #gallery-carousel img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  object-position: center;
-  padding: 2rem;
   border: #003249 3px solid;
-  margin: 1rem;
 }
 
 @media (width >=768px) {
   #gallery-carousel img {
-    height: 600px;
-    width: 50%;
-    object-fit: cover;
-    border: #003249 4px solid ;
-    padding: 0;
-    margin: 0;
-    filter: drop-shadow(10px 10px 12px rgba(0, 0, 0, 0.44));
+    height: 560px;
+    width: 53%;
+    border: #003249 4px solid;
+    filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.44));
   }
+
 }
 
 
