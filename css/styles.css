@@ -140,31 +140,33 @@ header::after {
   width: 100%;
   height: 2px;
 
-  background-color: #F09E3F;
-  animation: borderColor 12s ease-in-out infinite alternate;
+  background: linear-gradient(
+    90deg,
+    #F09E3F,
+    #EE6D40,
+    #A73D43,
+    #EE6D40,
+    #F09E3F
+  );
+
+  filter: drop-shadow(0 0 4px rgba(240, 158, 63, 0.6));
+
+  background-size: 300% 100%;
+  animation: gradientShift 10s ease-in-out infinite;
 }
 
-/* color transition */
-@keyframes borderColor {
-
+/* smooth gradient movement */
+@keyframes gradientShift {
   0% {
-    background-color: #F09E3F;
-  }
-  25% {
-    background-color: #EE6D40;
+    background-position: 0% 50%;
   }
   50% {
-    background-color: #A73D43;
-  }
-
-  75% {
-    background-color: #A73D43;
+    background-position: 100% 50%;
   }
   100% {
-    background-color: #F09E3F;
+    background-position: 0% 50%;
   }
 }
-
 
 
 .branding {
@@ -561,6 +563,7 @@ footer.footer {
 #myCarousel .f-carousel__slide {
   overflow: hidden;  
   background: #003249;
+  border-bottom: #003249 4px solid;
 
 }
 #myCarousel {
@@ -670,18 +673,47 @@ footer.footer {
 }
 
 /*MISSION BLOCK */
+/* MISSION BLOCK – animated gradient wave */
 .mission {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   text-align: center;
-  margin: 0 auto;
-  margin: 4rem;
-  font-weight: 1;
+  padding: 4rem 3rem;
+
+  /* background: linear-gradient(
+    120deg,
+    #ffffff,
+    #e8ebff,
+    #ffc5dc,
+    #e3e7ff,
+    #ffffff
+  );
+
+  background-size: 400% 400%;
+  animation: missionWave 20s ease-in-out infinite; */
 }
+
+
+/* gradient wave animation
+@keyframes missionWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
 
 .mission h3 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
   font-family: 'Copperplate', sans-serif;
   font-weight: 1;
+  text-align: center;
 
 }
 
@@ -791,7 +823,7 @@ footer.footer {
   .mission p {
     margin-top: 2rem;
     font-size: 1.4rem;
-    margin-bottom: 5rem;
+    margin-bottom: 1.5rem;
   }
 
   .what-we-do {
@@ -1550,7 +1582,7 @@ a {
 .what-to-expect {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   background-color: #003249;
 }
 
@@ -1732,13 +1764,14 @@ a {
   .what-to-expect-text {
     font-size: 1.5rem;
     max-width: 50%;
-    margin:4rem auto;
+    margin:3rem auto;
   }
 
   .what-to-expect img {
     max-width: 50%;
     align-self: center;
-    padding-left: 4rem;
+    padding-left: 5rem;
+
   }
 }
 
@@ -1765,6 +1798,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     text-align: center;
+    padding: 5rem 4rem 6rem;
   }
 
   .ContactInfo img {
@@ -1861,7 +1895,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 3rem;
 }
 
 #gallery-carousel img {
@@ -1871,14 +1905,22 @@ a {
   border: #003249 3px solid;
 }
 
+
+
 @media (width >=768px) {
-  #gallery-carousel img {
-    height: 560px;
-    width: 53%;
-    border: #003249 4px solid;
-    filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.44));
+  
+  #gallery-carousel .f-carousel__slide {
+    width: 760px;        /* controls slide width */
+    flex: 0 0 auto;
   }
 
+  #gallery-carousel img {
+    width: 100%;
+    max-width: none;     /* important */
+    height: 570px;
+    object-fit: cover;
+    filter: drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.4));
+  }
 }
 
 
