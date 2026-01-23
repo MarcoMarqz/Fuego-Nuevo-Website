@@ -294,6 +294,9 @@
 
   <script>
     const galleryCarousel = document.getElementById("gallery-carousel");
+    const isMobile = window.innerWidth <= 768; // simpler + more reliable
+
+    const speed = isMobile ? 5 : 10;
 
     Carousel(
       galleryCarousel,
@@ -302,7 +305,7 @@
         transition: "linear",
 
         Autoscroll: {
-          speed: 10,        // controls scroll speed
+          speed: speed,
           speedOnHover: 10,   // pause on hover
         },
       },
