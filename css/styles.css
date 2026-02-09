@@ -618,10 +618,18 @@ footer.footer {
 .slide-text h1 {
   font-size: 1.6rem;
   font-weight: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   margin-bottom: 0.3rem;
   font-family: 'Copperplate', sans-serif;
 }
+
+@media (width >=768px) {
+ .slide-text h1 {
+  letter-spacing: 2px;
+ }
+}
+
+
 
 .slide-text h1::after {
   content: "";
@@ -1246,11 +1254,12 @@ a {
 }
 
 .events-banner-block .slide-text p {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: white;
   text-align: center;
   padding-bottom: 2rem;
-  padding: 1rem 4rem;
+  padding-top: 10rem;
+  padding: 1rem 2.5rem;
 }
 
 
@@ -1408,7 +1417,7 @@ a {
 /* Arrow below the banner */
 .booking-banner-block .bookingGraphic {
   position: absolute;
-  top: 57%;
+  top: 54%;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -1867,12 +1876,12 @@ a {
 
 .Gallery1 {
   background-color: #003249;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 .Gallery2 {
   background-color: #F2EFEA;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 
@@ -1896,12 +1905,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 #gallery-carousel img {
   width: 100%;
-  height: 400px;
+  height: 350px;
   object-fit: cover;
   border: #003249 3px solid;
 }
