@@ -1910,7 +1910,7 @@ a {
 
 #gallery-carousel img {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
   border: #003249 3px solid;
 }
