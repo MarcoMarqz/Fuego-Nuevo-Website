@@ -47,6 +47,39 @@ img {
   max-inline-size: 100%;
 }
 
+
+
+body {
+    background-color: #fff; /* Fallback color */
+    background-image: radial-gradient(#8cacff 1px, transparent 0);
+    background-size: 20px 20px; /* Controls the spacing between dots */
+    height: 100vh; /* Optional: ensures the background covers the full viewport height */
+
+    animation: moveDots 50s linear infinite;
+}
+.fade-section {
+  background: radial-gradient(
+    circle at center,
+    white 0%,
+    white 20%,
+    rgba(255,255,255,0.7) 50%,
+    rgba(255,255,255,0) 85%
+  );
+  padding: 70px 20px;
+}
+
+
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 200px 200px;
+  }
+}
+
+
 /* * * * * * * * * * * * * * * * * * * * * * * * *
     TYPOGRAPHY 
     For larger projects, consider using a type scale:
