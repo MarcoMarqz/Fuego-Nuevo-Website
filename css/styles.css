@@ -48,16 +48,17 @@ img {
 }
 
 
-
+/* 
 body {
-    background-color: #fff; /* Fallback color */
+    background-color: #fff;
     background-image: radial-gradient(#8cacff 1px, transparent 0);
-    background-size: 20px 20px; /* Controls the spacing between dots */
-    height: 100vh; /* Optional: ensures the background covers the full viewport height */
+    background-size: 20px 20px; 
+    height: 100vh; 
 
     animation: moveDots 50s linear infinite;
-}
-.fade-section {
+} */
+
+/* .fade-section {
   background: radial-gradient(
     circle at center,
     white 0%,
@@ -66,7 +67,7 @@ body {
     rgba(255,255,255,0) 85%
   );
   padding: 70px 20px;
-}
+} */
 
 
 
@@ -1681,6 +1682,13 @@ a {
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  background: radial-gradient(
+    circle at center,
+    white 0%,
+    white 70%,
+    rgba(255,255,255,0.8) 65%,
+    rgba(255,255,255,0) 90%
+  );
 }
 
 .Monthly-Payment-text {
